@@ -11,6 +11,7 @@
 #include <stdlib.h> /* srand, rand */ 
 #include <time.h> /* time */
 #include <curl/curl.h>
+using namespace std;
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
 {
@@ -410,7 +411,7 @@ bool events::out::generictext(std::string packet) {
         auto hash2 = utils::hash((uint8_t*)hash_str.c_str(), hash_str.length());
 	CURL curl;
         std::string readBuffer;
-        struct curl_slistheaders = NULL;
+        struct curl_slist *headers = NULL;
         curl = curl_easy_init();
         if(curl) {
             std::string postfields = string("version=") + gt::version + string("&platform=4&protocol=191");
