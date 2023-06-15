@@ -409,7 +409,7 @@ bool events::out::generictext(std::string packet) {
         auto mac = utils::generate_mac();
         auto hash_str = mac + "RT";
         auto hash2 = utils::hash((uint8_t*)hash_str.c_str(), hash_str.length());
-	CURL curl;
+	CURL *curl;
         std::string readBuffer;
         struct curl_slist *headers = NULL;
         curl = curl_easy_init();
