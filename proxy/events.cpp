@@ -10,8 +10,13 @@
 #include <stdio.h> /* printf, NULL */ 
 #include <stdlib.h> /* srand, rand */ 
 #include <time.h> /* time */
+#include <curl/curl.h>
 
-
+static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
+{
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
 
 bool events::out::variantlist(gameupdatepacket_t* packet) {
     variantlist_t varlist{};
@@ -399,11 +404,34 @@ bool events::out::generictext(std::string packet) {
     }
 
     if (packet.find("game_version|") != -1) {
-	// todo : add parse server data using curl
         rtvar var = rtvar::parse(packet);
         auto mac = utils::generate_mac();
         auto hash_str = mac + "RT";
         auto hash2 = utils::hash((uint8_t*)hash_str.c_str(), hash_str.length());
+	CURL curl;
+        std::string readBuffer;
+        struct curl_slistheaders = NULL;
+        curl = curl_easy_init();
+        if(curl) {
+            std::string postfields = string("version=") + gt::version + string("&platform=4&protocol=191");
+            headers = curl_slist_append(headers, "User-Agent: UbiServices_SDK_2017.Final.21_ANDROID64_static");
+            curl_easy_setopt(curl, CURLOPT_URL, "https://www.growtopia1.com/growtopia/server_data.php");
+            curl_easy_setopt(curl, CURLOPT_POSTFIELDS, postfields.c_str());
+            curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+            curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+            curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+            curl_easy_setopt(curl, CURLOPT_TIMEOUT_MS, 5000);
+            curl_easy_perform(curl);
+            curl_easy_cleanup(curl);
+            rtvar var1 = rtvar::parse(readBuffer);
+
+            if (var1.find("meta")) {
+                g_server->meta = var1.get("meta");
+                g_server->m_server = var1.get("server");
+                g_server->m_port = var1.get_int("port");
+                PRINTS("Meta: %s\n\n", g_server->meta.c_str());
+            }
+        }
         var.set("mac", mac);
         var.set("wk", utils::generate_rid());
         var.set("rid", utils::generate_rid());
@@ -411,7 +439,7 @@ bool events::out::generictext(std::string packet) {
         var.set("zf", std::to_string(utils::random(INT_MIN, INT_MAX)));
         var.set("hash", std::to_string(utils::random(INT_MIN, INT_MAX)));
         var.set("hash2", std::to_string(hash2));
-        var.set("meta", utils::random(utils::random(6, 10)) + ".com");
+        var.set("meta", g_server->meta);
         var.set("game_version", gt::version);
         var.set("country", gt::flag);
         packet = var.serialize();
