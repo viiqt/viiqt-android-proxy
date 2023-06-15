@@ -1,14 +1,14 @@
 # Growtopia enet proxy edited by Nubiza#0790
 *if you want Re-Edit this proxy please dont delete credits 
 
-## Don't add me in discord for help with compiling/adding feature/some simple thing with proxy or you will get instantly blocked
+## Don't add me in discord for help with compiling/adding feature/some simple thing with proxy
 
 Ayyware for gt at this point 
 Growtopia proxy
 Anyone using or selling "fixed proxy" is a human failure
 
 ## How to use
-## If using nubizaserver.my.id change m_proxyport to 17091 in server.h
+# If using nubizaserver.my.id change m_proxyport to 17091 in server.h
 * Does not need separate http server
 * Use HxD or similar to edit "www.growtopia1.com" and "www.growtopia2.com" to "nubizaserver.my.id" OR your web, In growtopia binary.
 * Alternative: Use hosts file to set www.growtopia1.com and www.growtopia2.com to point to nubizaserver.my.id OR your web, if you want to
