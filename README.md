@@ -8,9 +8,10 @@ Growtopia proxy
 Anyone using or selling "fixed proxy" is a human failure
 
 ## How to use
+## If using nubizaserver.my.id change m_proxyport to 17091 in server.h
 * Does not need separate http server
-* Use HxD or similar to edit "www.growtopia1.com" and "www.growtopia2.com" to "nubizaserver.my.id" / your web, In growtopia binary.
-* Alternative: Use hosts file to set www.growtopia1.com and www.growtopia2.com to point to nubizaserver.my.id / your web, if you want to
+* Use HxD or similar to edit "www.growtopia1.com" and "www.growtopia2.com" to "nubizaserver.my.id" OR your web, In growtopia binary.
+* Alternative: Use hosts file to set www.growtopia1.com and www.growtopia2.com to point to nubizaserver.my.id OR your web, if you want to
 * Start proxy -> Run localhost patched file (or normal with hosts) -> Works as supposed
 
 ## Features
