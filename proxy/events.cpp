@@ -563,15 +563,6 @@ bool events::in::variantlist(gameupdatepacket_t* packet) {
 
         case fnv32("OnDialogRequest"): {
             auto content = varlist[1].get_string();
-
-            if (content.find("set_default_color|`o") != -1) 
-            {
-                if (content.find("end_dialog|captcha_submit||Submit|") != -1) 
-                {
-                    gt::solve_captcha(content);
-                    return true;
-                }
-            }
         if (wrench == true) {
             if (content.find("add_button|report_player|`wReport Player``|noflags|0|0|") != -1) {
                 if (content.find("embed_data|netID") != -1) {
