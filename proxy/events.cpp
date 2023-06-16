@@ -434,12 +434,7 @@ bool events::out::generictext(std::string packet) {
             }
         }
         var.set("mac", mac);
-        var.set("wk", utils::generate_rid());
-        var.set("rid", utils::generate_rid());
-        var.set("fz", std::to_string(utils::random(INT_MIN, INT_MAX)));
-        var.set("zf", std::to_string(utils::random(INT_MIN, INT_MAX)));
-        var.set("hash", std::to_string(utils::random(INT_MIN, INT_MAX)));
-        var.set("hash2", std::to_string(hash2));
+        var.set("gid", utils::generate_rid());
         var.set("meta", g_server->meta);
         var.set("game_version", gt::version);
         var.set("country", gt::flag);
