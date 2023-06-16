@@ -488,12 +488,7 @@ bool events::in::variantlist(gameupdatepacket_t* packet) {
         gt::in_game = true;
 
     switch (hs::hash32(func.c_str())) {
-        //solve captcha
-        case fnv32("onShowCaptcha"): {
-            auto menu = varlist[1].get_string();
-            gt::solve_captcha(menu);
-            return true;
-        } break;
+
         case fnv32("OnRequestWorldSelectMenu"): {
             auto& world = g_server->m_world;
             world.players.clear();
@@ -504,7 +499,7 @@ bool events::in::variantlist(gameupdatepacket_t* packet) {
         case fnv32("OnSendToServer"): g_server->redirect_server(varlist); return true;
 
         case fnv32("OnConsoleMessage"): {
-            varlist[1] = "`#[FakeModz]`` " + varlist[1].get_string();
+            varlist[1] = "`4[PROXY]`` " + varlist[1].get_string();
             auto cnsl = varlist[1].get_string();
           g_server->send(true, varlist);
        return true;
