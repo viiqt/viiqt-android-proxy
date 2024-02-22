@@ -26,9 +26,6 @@ Anyone using or selling "fixed proxy" is a human failure
 * Ignore autoban packets (NOTE: you can still get autobanned if the check is serversided)
 * Works with subserver switching
 
-## TODO
-* Delete this
-
 ## Changelog
 
 # 1.4.3
@@ -72,8 +69,6 @@ Anyone using or selling "fixed proxy" is a human failure
 * Ignore crash logs that would be sent to gt
 * Clean code
 * Gives unlimited zoom
-
-### Video: https://streamable.com/bhokj  
 
 ![x](https://i.imgur.com/RG2o9pM.png "Proxy pic 3")
 ![x](https://i.imgur.com/3DFiMgS.png "Proxy pic 2")
