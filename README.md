@@ -1,5 +1,5 @@
 # Growtopia enet proxy edited by Nubiza#0790
-# Redeveloped by vii#2131
+# Claimed by vii#2131
 
 Ayyware for gt at this point 
 Growtopia proxy
