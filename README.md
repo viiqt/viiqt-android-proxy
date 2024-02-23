@@ -1,5 +1,5 @@
 # Growtopia enet proxy edited by Nubiza#0790
-# Claimed by vii#2131
+# Copyright © Vii Android Proxy
 
 Ayyware for gt at this point 
 Growtopia proxy
