@@ -1,9 +1,8 @@
 # Growtopia enet proxy edited by Nubiza#0790
 # Copyright © Vii Android Proxy
 
-Ayyware for gt at this point 
-Growtopia proxy
-Anyone using or selling "fixed proxy" is a human failure
+dm me at discord for things @viiqt  
+Using or selling this source is a human failure
 
 ## How to use
 # If using nubizaserver.my.id change m_proxyport to 17091 in server.h
