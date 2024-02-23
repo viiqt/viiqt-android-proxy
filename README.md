@@ -26,12 +26,10 @@ Anyone using or selling "fixed proxy" is a human failure
 * Ignore autoban packets (NOTE: you can still get autobanned if the check is serversided)
 * Works with subserver switching
 
-## Changelog
+### Changelog
+## Vii's Proxy 1.0
 
-# 1.4.3
 * Add AAP Bypass with no spoof info needed
-
-# 1.4.2
 * Add /proxy - shows proxy commands
 * Add /tp player - teleports to a player in the world
 * Add /ghost - toggles ghost state (you wont move for others when its enabled)
@@ -41,27 +39,20 @@ Anyone using or selling "fixed proxy" is a human failure
 * Remove /resolve because its patched
 * Update version to 3.011
 * Add /kill name, or just "/kill " to kill everyone 
-# 1.4
 * Add /proxy - shows proxy commands
 * Add /tp player - teleports to a player in the world
 * Add /ghost - toggles ghost state (you wont move for others when its enabled)
 * Major refactor of the whole code
 * Add world/player classes, and some helpers for easier adding of new features
-
-# 1.3
 * Fix crashes
 * Add /uid name - resolves name to uid (only works for online non-mod players)
 * Add /flag id - that sets your client flag to be some item id
 * Add /legal - clears your malpractice status when you dont own a legal brief.
 * Add kill player button when wrenching players - just click give up on the surgery dialog
-
-# 1.2
 * Misc fixes
 * Add /resolve uid to name and their current world (aka tracking). Uid can be gotten from onspawn or from tracking packet if the person owns the world.
 * Automatically resolve moderator uids when they enter
 * Edit some values like meta/wk/hash2 so theres a partial automatic unban (you need to add mac address yourself, I didnt because i was using it for something else)
-
-# 1.1
 * Subserver switching should work, apparently there was no problem in the first place as the implementation worked already
 * Edit ping requests always to be non offensive behavior
 * Ignore autoban packets sent by client
